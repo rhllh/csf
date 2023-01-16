@@ -1,5 +1,7 @@
 # Day31
 
+Deployed with [Vercel](https://day31-ws.vercel.app/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
 
 ## Development server
