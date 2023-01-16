@@ -1,0 +1,7 @@
+<h2>Inventory</h2>
+
+<div *ngFor="let i of inventories">
+    <img src="/assets/fruits/{{i.imageUrl}}.png" width="50" [alt]="i.name">
+    <span style="float:left;">{{i.name}}</span>
+    <button style="float:right;" (click)="added(i.imageUrl)">Add</button>
+</div>
