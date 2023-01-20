@@ -1,0 +1,7 @@
+<h2>Inventory</h2>
+
+<div *ngFor="let f of fruits; let i = index" class="container">
+    <img src="../assets/fruits/{{ f.imageUrl }}.png" alt="{{ f.name }}">
+    <span>{{ f.name }}</span>
+    <button (click)="addItem(f.name)">Add</button>
+</div>

@@ -1,8 +1,4 @@
-<div class="center-it">
-    <h1>My Shopping Cart</h1>
-</div>
+<h2>{{ title }}</h2>
 
-<div class="side-by-side">
-    <app-inventory (onAdd)="selected($event)"></app-inventory>
-    <app-cart [cartMap]="cartMap" (onRemove)="removed($event)"></app-cart>
-</div>
+<app-font-size [message]="title" (onFontSize)="sizeChanged($event)">
+</app-font-size>

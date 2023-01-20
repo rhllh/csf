@@ -1,0 +1,12 @@
+<h2>Cart</h2>
+
+<div *ngIf="cart.size <= 0" class="container">
+    <h3>Your cart is empty</h3>
+</div>
+
+<div *ngIf="cart.size > 0">
+    <div *ngFor="let item of cart | keyvalue" class="container">
+        <span>{{ item.key }}: {{ item.value }}</span>
+        <button (click)="removed(item.key)">Remove</button>
+    </div>
+</div>

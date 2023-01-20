@@ -1,0 +1,11 @@
+<div>
+    <p [style.font-size]="fontSize">
+        {{ message | uppercase }}
+    </p>
+</div>
+
+<div>
+    Font size:
+    <input type="range" min="1" max="10" name="fontSize" step="0.1" 
+            value="1" (change)="fontSizeChanged($event)">
+</div> 
