@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" formControlName="name"></td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td><input type="text" formControlName="email"></td>
+        </tr>
+        <tr>
+            <td>Comments: </td>
+            <td><textarea formControlName="comments"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" [disabled]="form.invalid">Save</button>
+                <ng-content></ng-content>
+            </td>
+        </tr>
+    </table>
+</form>

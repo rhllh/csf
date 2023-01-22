@@ -1,0 +1,11 @@
+<h1>Users</h1>
+
+
+<app-userdetail (onUserDetail)="process($event)" #userDetail>
+    <button type="button" (click)="deleteUser()">Delete</button>
+</app-userdetail>
+
+<app-friendslist [friends]="users" [name]="newName">
+
+</app-friendslist>
+

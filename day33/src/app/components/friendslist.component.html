@@ -1,0 +1,13 @@
+<div *ngIf="friends.length <= 0">
+    <h2>No friends yet</h2>
+</div>
+
+<div *ngIf="friends.length > 0">
+    <h4>Number of friends: {{count}}</h4>
+
+    <table>
+        <tr *ngFor="let f of friends; let i = index">
+            <td>{{f.name}}</td>
+        </tr>
+    </table>
+</div>
