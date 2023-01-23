@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Your name" formControlName="name">
+        <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Your email" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Date of Birth</mat-label>
+        <input type="date" matInput [min]="this.currentDate" formControlName="dob">
+        <mat-icon matSuffix>event</mat-icon>
+    </mat-form-field>
+
+    <ng-content></ng-content>
+</form>
