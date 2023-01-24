@@ -1,0 +1,19 @@
+.thumbnail {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.form-field {
+    width: 100vw;
+    margin-top: 5px;
+}
+
+.task-view {
+    width: 100vw;
+    margin-top: 15px;
+}
+
+table {
+    width: 100vw;
+}

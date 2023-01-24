@@ -1,0 +1,57 @@
+<div class="toolbar">
+    <mat-toolbar color="primary">
+        <img src="/assets/agenda.png" class="thumbnail">
+        <span>To-Do List</span>
+    </mat-toolbar>
+</div>
+
+<div>
+    <form [formGroup]="form" (ngSubmit)="processForm()">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Description</mat-label>
+            <input type="text" formControlName="description" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Priority</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option value="high">High</mat-option>
+                <mat-option value="medium">Medium</mat-option>
+                <mat-option value="low">Low</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Due Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dueDate" [min]="currentDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button type="subtmit" mat-stroked-button color="primary" 
+            class="form-field" [disabled]="form.invalid">
+                Add
+        </button>
+    </form>
+</div>
+
+<div class="task-view">
+    <table *ngIf="tasks.length > 0">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+                <th>Completed?</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tasks; let i = index">
+                <td *ngIf="t.completed==false">{{t.description}}</td>
+                <td *ngIf="t.completed==false">{{t.priority}}</td>
+                <td *ngIf="t.completed==false">{{t.dueDate | date: 'yyyy-MM-dd'}}</td>
+                <td *ngIf="t.completed==false"><button type="button" (click)="completed(i)">Complete</button></td>
+                <td *ngIf="t.completed==false"><button type="button" (click)="delete(i)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
