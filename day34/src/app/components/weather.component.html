@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="searchWeather()">
+    <mat-form-field appearance="outline" class="form-field">
+        <mat-label>City</mat-label>
+        <input type="text" matInput placeholder="City" formControlName="city">
+        <mat-hint align="end">City Name</mat-hint>
+    </mat-form-field>
+    <div class="button-bar">
+        <button type="submit" mat-raised-button color="primary">
+            <mat-icon>search</mat-icon>
+            Search
+        </button>
+        <button type="button" mat-raised-button color="primary" (click)="clear()">
+            <mat-icon>delete</mat-icon>
+            Clear
+        </button>
+    </div>
+</form>
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{city}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content *ngIf="model.temperature">
+        <p>
+            Temperature: <span *ngIf="model.temperature">{{ model.temperature - 273.15 }}</span>
+        </p>
+        <p>
+            Pressure: <span *ngIf="model.pressure">{{ model.pressure }}</span>
+        </p>
+        <p>
+            Humidity: <span *ngIf="model.humidity">{{ model.humidity }}</span>
+        </p>
+        <p>
+            Description: <span *ngIf="model.description">{{ model.description }}</span>
+        </p>
+        <p>
+            Wind Speed: <span *ngIf="model.windSpeed">{{ model.windSpeed }}</span>
+        </p>
+        <p>
+            Wind Degree: <span *ngIf="model.windDegree">{{ model.windDegree }}</span>
+        </p>
+    </mat-card-content>
+</mat-card>
