@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row><span>Games</span></mat-toolbar-row>
+</mat-toolbar>
+
+<form [formGroup]="form">
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Games</mat-label>
+        <mat-select formControlName="resultsPP" (selectionChange)="newResultPP()">
+            <mat-option *ngFor="let n of resultsPPArray" [value]="n">{{ n }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+<app-games [resultsPerPage]="resultsPP"></app-games>
