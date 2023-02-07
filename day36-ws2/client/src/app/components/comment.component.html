@@ -1,0 +1,7 @@
+<div *ngIf="comments">
+   <div class="box" *ngFor="let c of comments">
+      <h4>{{c.user}}</h4>
+      <p>{{c.commentText}}</p>
+      <h5>Rating: {{c.rating}}</h5>
+   </div>
+</div>
