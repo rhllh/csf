@@ -13,6 +13,8 @@ export class BggService {
   getGames(): Promise<Game[]> {
     const headers = new HttpHeaders().set('content-type', 'application/json')
 
+    // firstValueFrom: resolve promise as soon as the first value arrives from the observable
+    // lastValueFrom: waits for observable to complete, resolves promise with last value from observed stream
     return lastValueFrom(
       this.http.get<Game[]>(`/api/games`, {headers})
     )
@@ -21,7 +23,7 @@ export class BggService {
   getCommentsByGID(gid: number): Promise<Comment[]> {
     const headers = new HttpHeaders().set('content-type', 'application/json')
 
-    return firstValueFrom(
+    return lastValueFrom(
       this.http.get<Comment[]>(`/api/game/${gid}/comments`, {headers})
     )
   }
