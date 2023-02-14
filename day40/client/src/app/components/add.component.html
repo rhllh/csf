@@ -1,0 +1,24 @@
+<form [formGroup]="form" enctype="multipart/form-data" (ngSubmit)="uploadPost()">
+    <table>
+        <tr>
+            <td>Image</td>
+            <td><input type="file" formControlName="image" accept="image/*" #imageFile></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input type="text" formControlName="title"></td>
+        </tr>
+        <tr>
+            <td>Text</td>
+            <td><textarea cols="30" rows="10" formControlName="text"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit" [disabled]="form.invalid">Upload</button></td>
+        </tr>
+    </table>
+</form>
+
+<!-- <div *ngIf="imageFile">
+    <img [src]="imageFile" alt="">
+</div> -->

@@ -1,0 +1,16 @@
+<div *ngIf="!character">
+    <h3>Loading..</h3>
+</div>
+<div *ngIf="character">
+    <img [src]="character.thumbnail" [alt]="character.name" width="300">
+    <h2>{{character.name}}</h2>
+    <p>{{character.description}}</p>
+    <p><a [href]="character.details">More Details</a></p>
+    <p><button (click)="goToComment()">Comment</button><button type="button" [routerLink]="['/']">Home</button></p>
+</div>
+
+<div *ngIf="character.comments">
+    <p *ngFor="let comment of character.comments">
+        {{comment}}
+    </p>
+</div>

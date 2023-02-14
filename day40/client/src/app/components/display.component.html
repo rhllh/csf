@@ -1,0 +1,8 @@
+<div *ngIf="posts">
+    <button type="button" [routerLink]="['/post']">Add Post</button>
+    <div *ngFor="let p of posts" class="post-box">
+        <img src="{{p.imageUrl}}" width="300">
+        <h3>{{p.title}}</h3>
+        <p>{{p.text}}</p>
+    </div>
+</div>

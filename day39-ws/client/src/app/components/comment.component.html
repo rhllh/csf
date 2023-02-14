@@ -1,0 +1,14 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="postComment()">
+        <table>
+            <tr>
+                <td><textarea cols="30" rows="10"formControlName="comment"></textarea></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Post Comment</button></td>
+                <td><button type="button" [routerLink]="['/character/id', charId]">Cancel</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

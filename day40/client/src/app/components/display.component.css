@@ -1,0 +1,11 @@
+.post-box {
+    margin: 4px;
+    border: 1px lightblue solid;
+    border-radius: 1px;
+    max-width: 400px;
+    justify-content: space-evenly;
+}
+
+img {
+    max-width: 200px;
+}
