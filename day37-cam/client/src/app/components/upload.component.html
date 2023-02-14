@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="upload()">
+    <table>
+      <tr>
+        <td></td>
+        <td>
+          <div>
+            <img [src]="svc.imageData" class="thumbnail">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Title:</td>
+        <td><input type="text" size="30" formControlName="title"></td>
+      </tr>
+      <tr>
+        <td>Comments:</td>
+        <td>
+          <textarea cols="30" rows="4" formControlName="comments">
+          </textarea>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="button" [routerLink]="['/']">Back</button>
+          <button type="submit">Upload</button>
+        </td>
+      </tr>
+    </table>
+  
+  </form>

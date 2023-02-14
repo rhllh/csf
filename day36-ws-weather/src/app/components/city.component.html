@@ -1,0 +1,30 @@
+<h2>{{title | titlecase}}</h2>
+
+<div>
+    <table>
+        <tr>
+            <td>Description</td>
+            <td>{{ this.model.description | titlecase }}</td>
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>{{ this.model.temperature - 273.15 | number : '1.2-2' }} C</td>
+        </tr>
+        <tr>
+            <td>Feels Like</td>
+            <td>{{ this.model.feelsLike - 273.15 | number : '1.2-2' }} C</td>
+        </tr>
+        <tr>
+            <td>Minimum</td>
+            <td>{{ this.model.tempMin - 273.15 | number : '1.2-2' }} C</td>
+        </tr>
+        <tr>
+            <td>Maximum</td>
+            <td>{{ this.model.tempMax - 273.15 | number : '1.2-2' }} C</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button [routerLink]="['']">Back</button></td>
+        </tr>
+    </table>
+</div>
