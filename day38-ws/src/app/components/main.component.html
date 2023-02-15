@@ -1,0 +1,20 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="addCity()">
+        <table>
+            <tr>
+                <td>City</td>
+                <td><input type="text" formControlName="name"></td>
+                <td><button type="submit">Add</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div *ngIf="cities">
+    <table>
+        <tr *ngFor="let c of cities">
+            <td><h3><a [routerLink]="['/city', c.name]">{{c.name | titlecase}}</a></h3></td>
+            <td><button (click)="deleteCity(c.cityId)">Delete</button></td>
+        </tr>
+    </table>
+</div>
