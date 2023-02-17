@@ -1,1 +1,1 @@
-deployed to [railway](urbane-religion-production.up.railway.app)
+deployed to [railway](http://urbane-religion-production.up.railway.app)
